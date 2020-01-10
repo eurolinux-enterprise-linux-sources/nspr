@@ -1,6 +1,6 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.13.1
+Version:        4.19.0
 Release:        1%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
@@ -10,7 +10,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-root
 # Sources available at https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
 # When hg tag based snapshots are being used, refer to documentation at
 # https://wiki.mozilla.org/NSS:UsingHG and check out https://hg.mozilla.org/projects/nspr
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}-beta.tar.gz
 
 Patch1:         nspr-config-pc.patch
 # Upstream: https://bugzilla.mozilla.org/show_bug.cgi?id=853902
@@ -130,6 +130,15 @@ done
 %{_bindir}/nspr-config
 
 %changelog
+* Tue Mar  6 2018 Daiki Ueno <dueno@redhat.com> - 4.19.0-1
+- Rebase to NSPR 4.19
+
+* Wed Feb 28 2018 Daiki Ueno <dueno@redhat.com> - 4.19.0-0.1.beta
+- Rebase to NSPR 4.19 BETA
+
+* Wed Nov  8 2017 Daiki Ueno <dueno@redhat.com> - 4.17.0-1
+- Rebase to NSPR 4.17
+
 * Fri Oct 21 2016 Daiki Ueno <dueno@redhat.com> - 4.13.1-1
 - Rebase to NSPR 4.13.1
 
