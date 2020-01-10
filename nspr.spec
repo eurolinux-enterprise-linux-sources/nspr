@@ -1,6 +1,6 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.11.0
+Version:        4.13.1
 Release:        1%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
@@ -10,7 +10,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-root
 # Sources available at https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
 # When hg tag based snapshots are being used, refer to documentation at
 # https://wiki.mozilla.org/NSS:UsingHG and check out https://hg.mozilla.org/projects/nspr
-Source0:        %{name}-%{version}.tar.bz2
+Source0:        %{name}-%{version}.tar.gz
 
 Patch1:         nspr-config-pc.patch
 # Upstream: https://bugzilla.mozilla.org/show_bug.cgi?id=853902
@@ -130,6 +130,12 @@ done
 %{_bindir}/nspr-config
 
 %changelog
+* Fri Oct 21 2016 Daiki Ueno <dueno@redhat.com> - 4.13.1-1
+- Rebase to NSPR 4.13.1
+
+* Mon Oct  3 2016 Daiki Ueno <dueno@redhat.com> - 4.13.0-1
+- Rebase to NSPR 4.13
+
 * Mon Jan 18 2016 Elio Maldonado <emaldona@redhat.com> - 4.11.0-1
 - Rebase to NSPR 4.11
 - Resolves: Bug 1297891 - Rebase RHEL 6.8 to NSPR 4.11 in preparation for Firefox 45
@@ -211,7 +217,7 @@ done
 * Mon Jan 17 2011 Elio Maldonado <emaldona@redhat.com> - 4.8.7-1
 - Update to 4.8.7
 
-* Thu Aug 24 2010 Kai Engert <kaie@redhat.com> - 4.8.6-1
+* Tue Aug 24 2010 Kai Engert <kaie@redhat.com> - 4.8.6-1
 - update to 4.8.6
 
 * Wed May 12 2010 Elio Maldonado <emaldona@redhat.com> - 4.8.4-2
