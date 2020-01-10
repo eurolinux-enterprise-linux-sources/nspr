@@ -1,7 +1,7 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
 Version:        4.11.0
-Release:        0.1%{?dist}
+Release:        1%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
 Group:          System Environment/Libraries
@@ -106,6 +106,7 @@ do
   ln -sf ../../%{_lib}/$file $RPM_BUILD_ROOT/%{_libdir}/$file
 done
 
+
 %clean
 %{__rm} -Rf $RPM_BUILD_ROOT
 
@@ -129,11 +130,12 @@ done
 %{_bindir}/nspr-config
 
 %changelog
-* Tue Jan 26 2016 Elio Maldonado <emaldona@redhat.com> - 4.11.0-0.1
+* Mon Jan 18 2016 Elio Maldonado <emaldona@redhat.com> - 4.11.0-1
 - Rebase to NSPR 4.11
+- Resolves: Bug 1297891 - Rebase RHEL 6.8 to NSPR 4.11 in preparation for Firefox 45
 
 * Fri Oct 16 2015 Elio Maldonado <emaldona@redhat.com> - 4.10.8-2
-- Resolves: Bug 1269360 - CVE-2015-7183
+- Resolves: Bug 1269361 - CVE-2015-7183
 - nspr: heap-buffer overflow in PL_ARENA_ALLOCATE can lead to crash (under ASAN), potential memory corruption
 
 * Sun Mar 22 2015 Elio Maldonado <emaldona@redhat.com> - 4.10.8-1
