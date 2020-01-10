@@ -1,0 +1,13 @@
+diff -up ./nspr/pr/src/pthreads/ptthread.c.s390x ./nspr/pr/src/pthreads/ptthread.c
+--- ./nspr/pr/src/pthreads/ptthread.c.s390x	2012-03-01 18:25:40.922241580 -0800
++++ ./nspr/pr/src/pthreads/ptthread.c	2012-03-01 18:27:12.759116440 -0800
+@@ -836,6 +836,9 @@ static void _pt_thread_death_internal(vo
+ #if defined(DEBUG)
+     memset(thred, 0xaf, sizeof(PRThread));
+ #endif /* defined(DEBUG) */
++#if defined(__s390x__)
++    if (callDestructors)
++#endif
+     PR_Free(thred);
+ }  /* _pt_thread_death */
+ 
