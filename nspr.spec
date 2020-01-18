@@ -1,6 +1,16 @@
+%global nspr_version 4.21.0
+
+# The upstream omits the trailing ".0", while we need it for
+# consistency with the pkg-config version:
+# https://bugzilla.redhat.com/show_bug.cgi?id=1578106
+%{lua:
+rpm.define(string.format("nspr_archive_version %s",
+           string.gsub(rpm.expand("%nspr_version"), "(.*)%.0$", "%1")))
+}
+
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.19.0
+Version:        %{nspr_version}
 Release:        1%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
@@ -11,7 +21,7 @@ Conflicts:      filesystem < 3
 # Sources available at https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/
 # When hg tag based snapshots are being used, refer to documentation at
 # https://wiki.mozilla.org/NSS:UsingHG and check out https://hg.mozilla.org/projects/nspr
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{nspr_archive_version}.tar.gz
 Source1:        nspr-config.xml
 
 Patch1:         nspr-config-pc.patch
@@ -37,7 +47,7 @@ Header files for doing development with the Netscape Portable Runtime.
 
 %prep
 
-%setup -q
+%setup -q -n %{name}-%{nspr_archive_version}
 
 # Original nspr-config is not suitable for our distribution,
 # because on different platforms it contains different dynamic content.
@@ -145,6 +155,9 @@ done
 %{_mandir}/man*/*
 
 %changelog
+* Wed Mar 20 2019 Daiki Ueno <dueno@redhat.com> - 4.21.0-1
+- Rebase to NSPR 4.21
+
 * Mon Mar  5 2018 Daiki Ueno <dueno@redhat.com> - 4.19.0-1
 - Rebase to NSPR 4.19
 
