@@ -1,7 +1,7 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.11.0
-Release:        1%{?dist}
+Version:        4.13.1
+Release:        1.0%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
 Group:          System Environment/Libraries
@@ -145,8 +145,12 @@ done
 %{_mandir}/man*/*
 
 %changelog
-* Tue Jan 26 2016 Elio Maldonado <emaldona@redhat.com> - 4.11.0-1
+* Fri Feb 10 2017 Daiki Ueno <dueno@redhat.com> - 4.13.1-1.0
+- Rebase to NSPR 4.13.1
+
+* Mon Jan 18 2016 Elio Maldonado <emaldona@redhat.com> - 4.11.0-1
 - Rebase to NSPR 4.11
+- Resolves: Bug 1297941 - Rebase RHEL 7.3 to NSS 3.21 in preparation for Firefox 45
 
 * Fri Oct 16 2015 Elio Maldonado <emaldona@redhat.com> - 4.10.8-2
 - Resolves: Bug 1269363 - CVE-2015-7183
