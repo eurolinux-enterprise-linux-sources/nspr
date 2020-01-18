@@ -1,7 +1,7 @@
 Summary:        Netscape Portable Runtime
 Name:           nspr
-Version:        4.13.1
-Release:        1.0%{?dist}
+Version:        4.17.0
+Release:        1%{?dist}
 License:        MPLv2.0
 URL:            http://www.mozilla.org/projects/nspr/
 Group:          System Environment/Libraries
@@ -145,6 +145,12 @@ done
 %{_mandir}/man*/*
 
 %changelog
+* Fri Oct  6 2017 Daiki Ueno <dueno@redhat.com> - 4.17.0-1
+- Rebase to NSPR 4.17
+
+* Wed Aug 23 2017 Daiki Ueno <dueno@redhat.com> - 4.16.0-1
+- Rebase to NSPR 4.16
+
 * Fri Feb 10 2017 Daiki Ueno <dueno@redhat.com> - 4.13.1-1.0
 - Rebase to NSPR 4.13.1
 
